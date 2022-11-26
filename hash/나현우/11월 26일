@@ -1,0 +1,104 @@
+
+## leetcode 13.
+```jsx
+/**
+ * @param {string} s
+ * @return {number}
+ */
+const romanToInt = function(s) {
+    // 일단은 s라는 string을 돌면서 검사해야돼. 
+    const map = new Map([
+        ['I', 1],
+        ['V', 5],
+        ['X', 10],
+        ['L', 50],
+        ['C', 100],
+        ['D', 500],
+        ['M', 1000],
+    ]);
+
+    let answer = 0;
+
+    for (let i = 0; i < s.length - 1; i++) {
+        if (s[i] === "I" && (s[i + 1] === "V" || s[i + 1] === "X")) {
+            answer -= map.get(s[i]);
+        } else if (s[i] === "X" && (s[i + 1] === "L" || s[i + 1] === "C")) {
+            answer -= map.get(s[i]);
+        } else if (s[i] === "C" && (s[i + 1] === "D" || s[i + 1] === "M")) {
+            answer -= map.get(s[i]);
+        } else {
+            answer += map.get(s[i]);
+        }
+    }
+
+    answer += map.get(s[s.length - 1]);
+
+    return answer;
+};
+
+``` 
+## leetcode 17.
+```jsx
+/**
+ * @param {string} digits
+ * @return {string[]}
+ */
+const letterCombinations = function(digits) {
+    // 자 천천히 생각해보자. digits를 돌면서, 각각의 숫자들은 알파벳에 맞닿아있음. 
+    const obj = {
+        2: ["a", "b", "c"], 
+        3: ["d", "e", "f"],
+        4: ["g", "h", "i"], 
+        5: ["j", "k", "l"],
+        6: ["m", "n", "o"], 
+        7: ["p", "q", "r", "S"],
+        8: ["t", "u", "v"],
+        9: ["w", "x", "y", "z"]
+    }
+
+    for (let i = 0; i < digits.length; i++) {
+        obj[digits[i]].forEach((char) => {
+
+        })
+    }
+
+};
+``` 
+## leetcode 202.
+```jsx
+/**
+ * @param {number} n
+ * @return {boolean}
+ */
+const isHappy = function(n) {
+
+    let str = n.toString();
+    let firstValue = -1;
+
+    let sum = 0;
+
+    for(let i = 0; i < str.length; i++) {
+        sum += Math.pow(Number(str[i]), 2);
+    }
+
+    firstValue = sum; 
+
+    str = sum.toString();
+
+    if (sum === 1) return true; 
+
+    while(true) {
+        sum = 0;
+
+        for(let i = 0; i < str.length; i++) {
+            sum += Math.pow(Number(str[i]), 2);
+        }
+
+        if (sum === 1) return true; 
+        else if (sum === firstValue) return false;
+
+        str = sum.toString();
+    }
+};
+
+``` 
