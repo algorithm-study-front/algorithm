@@ -2,9 +2,9 @@
  * https://www.acmicpc.net/problem/9935
  */
 
-const path = process.platform === "linux" ? "/dev/stdin" : "input.txt";
-let input = require("fs").readFileSync(path).toString().trim().split("\n");
-const [str, bombStr] = input;
+// const path = process.platform === "linux" ? "/dev/stdin" : "input.txt";
+// let input = require("fs").readFileSync(path).toString().trim().split("\n");
+// const [str, bombStr] = input;
 
 function solution(str, bombStr) {
   const strArr = str.split("").reverse();
@@ -33,4 +33,4 @@ function solution(str, bombStr) {
   return answer.reverse().join("");
 }
 
-console.log(solution(str, bombStr));
+console.log(solution("testestestC4setestC4C4", "C4"));
