@@ -1,3 +1,6 @@
+/**
+ * https://school.programmers.co.kr/learn/courses/30/lessons/12904?language=javascript
+ */
 function solution(s) {
   const len = s.length;
   let answer = 0;
