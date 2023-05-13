@@ -1,5 +1,5 @@
 /**
- * https://www.acmicpc.net/problem/2667
+ * https://www.acmicpc.net/problem/11726
  */
 const path = process.platform === "linux" ? "/dev/stdin" : "input.txt";
 let input = require("fs").readFileSync(path).toString().trim().split("\n");
